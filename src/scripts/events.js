@@ -1,6 +1,6 @@
 import apiActions from "./api.js"
 import render from "./dom.js"
-import api from "./api.js"
+import {renderToInput} from "./dom.js"
 
 const recipeList = document.querySelector("#recipeList")
 
@@ -24,9 +24,16 @@ export default {
                 // Extract ID of section el to edit in DB
                 const toEdit = event.target.id.split("--")[1]
                 // Updating data in DB with ID matching passed-in ID
-                apiActions.updateRecipe(toEdit)
-                    .then(apiActions.getAllRecipes)
-                    .then(render)
+                const updateFormField = (toEdit) => {
+                    apiActions.getRecipe(toEdit)
+                        .then(entry => {
+                            renderToInput(entry)
+                        })                                            
+                }
+                updateFormField(toEdit)
+                // apiActions.updateRecipe(toEdit)
+                //     .then(apiActions.getAllRecipes)
+                //     .then(render)
             }
         })
     }
