@@ -1,6 +1,6 @@
 import apiActions from "./api.js"
 import render from "./dom.js"
-import {renderToInput} from "./dom.js"
+import {renderToInput, recipeTitle, recipeInstructions} from "./dom.js"
 
 const recipeList = document.querySelector("#recipeList")
 
@@ -31,6 +31,10 @@ export default {
                         })                                            
                 }
                 updateFormField(toEdit)
+                // Getting updated user input values
+                const titleInp = recipeTitle.value
+                const instructionsInp = recipeInstructions.value
+
                 // apiActions.updateRecipe(toEdit)
                 //     .then(apiActions.getAllRecipes)
                 //     .then(render)

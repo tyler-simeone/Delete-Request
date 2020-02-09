@@ -23,7 +23,7 @@ const renderToInput = recipe => {
     recipeInstructions.innerHTML = ""
 
     recipeTitle.value = recipe.title
-    recipeInstructions.innerHTML += recipe.instructions
+    recipeInstructions.innerHTML = recipe.instructions
 }
 // So important to import using same syntax as export when using the {}
-export {renderToInput}
+export {renderToInput, recipeTitle, recipeInstructions}
