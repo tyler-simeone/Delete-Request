@@ -8,5 +8,11 @@ export default {
     getAllRecipes () {
         return fetch("http://localhost:8088/recipes")
             .then(resp => resp.json())
-    }
+    },
+    // updateRecipe (recipeId) {
+    //     return fetch(`http://localhost:8088/recipes/${recipeId}`, {
+    //         method: "PUT",
+
+    //     })
+    // }
 }

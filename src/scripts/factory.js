@@ -6,6 +6,9 @@ export default recipe => `
         <div class="recipe__instructions">
             ${recipe.instructions}
         </div>
+        <button id="editRecipe--${recipe.id}">
+            Edit Recipe
+        </button>
         <button id="deleteRecipe--${recipe.id}">
             Delete Recipe
         </button>
